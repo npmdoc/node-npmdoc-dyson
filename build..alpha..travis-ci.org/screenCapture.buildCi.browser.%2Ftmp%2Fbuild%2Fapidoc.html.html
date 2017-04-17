@@ -1,0 +1,1382 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/webpro/dyson#readme">dyson (v1.0.2)</a>
+</h1>
+<h4>Node server for dynamic, fake JSON.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson">module dyson</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.bootstrap">
+            function <span class="apidocSignatureSpan">dyson.</span>bootstrap
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.createServer">
+            function <span class="apidocSignatureSpan">dyson.</span>createServer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.delay">
+            function <span class="apidocSignatureSpan">dyson.</span>delay
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.getConfigurations">
+            function <span class="apidocSignatureSpan">dyson.</span>getConfigurations
+            <span class="apidocSignatureSpan">(options.configDir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.parameter">
+            function <span class="apidocSignatureSpan">dyson.</span>parameter
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.raw_body">
+            function <span class="apidocSignatureSpan">dyson.</span>raw_body
+            <span class="apidocSignatureSpan">({ property = 'rawBody' } = {})</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.registerServices">
+            function <span class="apidocSignatureSpan">dyson.</span>registerServices
+            <span class="apidocSignatureSpan">(app, options, configs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dyson.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dyson.</span>loader</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dyson.</span>multiRequest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dyson.</span>proxy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dyson.</span>response</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">dyson.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.bootstrap">module dyson.bootstrap</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.bootstrap.bootstrap">
+            function <span class="apidocSignatureSpan">dyson.</span>bootstrap
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.createServer">module dyson.createServer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.createServer.createServer">
+            function <span class="apidocSignatureSpan">dyson.</span>createServer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.defaults">module dyson.defaults</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.defaults.assign">
+            function <span class="apidocSignatureSpan">dyson.defaults.</span>assign
+            <span class="apidocSignatureSpan">(configs, method)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.defaults.assignToAll">
+            function <span class="apidocSignatureSpan">dyson.defaults.</span>assignToAll
+            <span class="apidocSignatureSpan">(method =&gt; { configs[method] = assign(rawConfigs[method], method)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.delay">module dyson.delay</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.delay.delay">
+            function <span class="apidocSignatureSpan">dyson.</span>delay
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.getConfigurations">module dyson.getConfigurations</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.getConfigurations.getConfigurations">
+            function <span class="apidocSignatureSpan">dyson.</span>getConfigurations
+            <span class="apidocSignatureSpan">(options.configDir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.loader">module dyson.loader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.loader.load">
+            function <span class="apidocSignatureSpan">dyson.loader.</span>load
+            <span class="apidocSignatureSpan">(module, path.resolve(configDir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.multiRequest">module dyson.multiRequest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.multiRequest.doMultiRequest">
+            function <span class="apidocSignatureSpan">dyson.multiRequest.</span>doMultiRequest
+            <span class="apidocSignatureSpan">(req, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.multiRequest.isMultiRequest">
+            function <span class="apidocSignatureSpan">dyson.multiRequest.</span>isMultiRequest
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.parameter">module dyson.parameter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.parameter.parameter">
+            function <span class="apidocSignatureSpan">dyson.</span>parameter
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.proxy">module dyson.proxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.proxy.middleware">
+            function <span class="apidocSignatureSpan">dyson.proxy.</span>middleware
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.raw_body">module dyson.raw_body</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.raw_body.raw_body">
+            function <span class="apidocSignatureSpan">dyson.</span>raw_body
+            <span class="apidocSignatureSpan">({ property = 'rawBody' } = {})</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.registerServices">module dyson.registerServices</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.registerServices.registerServices">
+            function <span class="apidocSignatureSpan">dyson.</span>registerServices
+            <span class="apidocSignatureSpan">(app, options, configs)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.response">module dyson.response</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.response.generate">
+            function <span class="apidocSignatureSpan">dyson.response.</span>generate
+            <span class="apidocSignatureSpan">(req, res, next)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.response.render">
+            function <span class="apidocSignatureSpan">dyson.response.</span>render
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.response.setValues">
+            function <span class="apidocSignatureSpan">dyson.response.</span>setValues
+            <span class="apidocSignatureSpan">(template = null, params, scope)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.dyson.util">module dyson.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.util.isTest">
+            function <span class="apidocSignatureSpan">dyson.util.</span>isTest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.dyson.util.log">
+            function <span class="apidocSignatureSpan">dyson.util.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson" id="apidoc.module.dyson">module dyson</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.bootstrap" id="apidoc.element.dyson.bootstrap">
+        function <span class="apidocSignatureSpan">dyson.</span>bootstrap
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options =&gt; {
+  const configs = getConfigurations(options);
+  const app = createServer(options);
+  return registerServices(app, options, configs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## HTTPS
+
+If you want to run dyson over https:// you have to provide a self-signed (or authority-signed) certificate into the `options.https
+` the same way it's required for NodeJS HTTPS to work:
+
+``` javascript
+const fs = require('fs');
+
+dyson.<span class="apidocCodeKeywordSpan">bootstrap</span>({
+    configDir: `${__dirname}/dummy`,
+    port: 3001,
+    https: {
+        key: fs.readFileSync(`${__dirname}'/certs/sample.key`),
+        crt: fs.readFileSync(`${__dirname}/certs/sample.crt`)
+    }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.createServer" id="apidoc.element.dyson.createServer">
+        function <span class="apidocSignatureSpan">dyson.</span>createServer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options =&gt; {
+  const app = express();
+  let server;
+
+  if(options.https) {
+    server = https.createServer(options.https, app).listen(options.port);
+  } else {
+    server = app.listen(options.port);
+  }
+
+  app.set('dyson_server', server);
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const options = {
+    configDir: path.join(__dirname, 'services'),
+    port: 8765
+};
+
+const configs = dyson.getConfigurations(options),
+    appBefore = dyson.<span class="apidocCodeKeywordSpan">createServer</span>(options),
+    appAfter = dyson.registerServices(appBefore, options, configs);
+
+console.log(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.delay" id="apidoc.element.dyson.delay">
+        function <span class="apidocSignatureSpan">dyson.</span>delay
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delay =&gt; (req, res, next) =&gt; {
+  if(typeof delay === 'number') {
+    _.delay(next, delay);
+  } else if(_.isArray(delay)) {
+    _.delay(next, _.random.apply(null, delay));
+  } else {
+    next();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+const _ = require('lodash');
+
+module.exports = delay =&gt; (req, res, next) =&gt; {
+  if(typeof delay === 'number') {
+    _.<span class="apidocCodeKeywordSpan">delay</span>(next, delay);
+  } else if(_.isArray(delay)) {
+    _.delay(next, _.random.apply(null, delay));
+  } else {
+    next();
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.getConfigurations" id="apidoc.element.dyson.getConfigurations">
+        function <span class="apidocSignatureSpan">dyson.</span>getConfigurations
+        <span class="apidocSignatureSpan">(options.configDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options =&gt; {
+  const rawConfigs = loader.load(options.configDir);
+
+  return defaults.assignToAll(rawConfigs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path = require('path');
+
+const options = {
+    configDir: path.join(__dirname, 'services'),
+    port: 8765
+};
+
+const configs = dyson.<span class="apidocCodeKeywordSpan">getConfigurations</span>(options),
+    appBefore = dyson.createServer(options),
+    appAfter = dyson.registerServices(appBefore, options, configs);
+
+console.log(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.parameter" id="apidoc.element.dyson.parameter">
+        function <span class="apidocSignatureSpan">dyson.</span>parameter
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(req, res, next) =&gt; {
+  const requireParameters = res.locals.config.requireParameters;
+  if(!_.isEmpty(requireParameters)) {
+    const missingParameters = requireParameters.filter(parameter =&gt; {
+      return _.isEmpty(req.body[parameter]) &amp;&amp; _.isEmpty(req.query[parameter]);
+    });
+
+    if(!_.isEmpty(missingParameters)) {
+      res.status(400).send({ error: `Required parameters (${missingParameters.join(', ')}) not found.` });
+    }
+  }
+  next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.raw_body" id="apidoc.element.dyson.raw_body">
+        function <span class="apidocSignatureSpan">dyson.</span>raw_body
+        <span class="apidocSignatureSpan">({ property = 'rawBody' } = {})</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">({ property = 'rawBody' } = {}) =&gt; {
+  return (req, res, next) =&gt; {
+    let data = '';
+    req.on('data', chunk =&gt; {
+      data += chunk;
+    });
+    req.on('end', () =&gt; {
+      req[property] = data;
+    });
+    next();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.registerServices" id="apidoc.element.dyson.registerServices">
+        function <span class="apidocSignatureSpan">dyson.</span>registerServices
+        <span class="apidocSignatureSpan">(app, options, configs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(app, options, configs) =&gt; {
+
+  app.set('dyson_options', options);
+
+  app.use(cors({ origin: true, credentials: true }));
+  app.use(rawBody());
+  app.use(cookieParser());
+  app.use(favicon(`${__dirname}/favicon.ico`));
+
+  const bodyParserOptions = options.bodyParserJsonLimit ? { limit: options.bodyParserJsonLimit } : {};
+  app.use(bodyParser.json(bodyParserOptions));
+
+  const bodyParserUrlOptions = { extended: true };
+  bodyParserUrlOptions.limit = options.bodyParserUrlencodedLimit ? options.bodyParserUrlencodedLimit : null;
+  app.use(bodyParser.urlencoded(bodyParserUrlOptions));
+
+  Object.keys(configs).forEach(method =&gt; {
+
+    configs[method].forEach(config =&gt; {
+
+      if(options.proxy === true &amp;&amp; config.proxy !== false) {
+
+        // Allows each config file to be bypassed without removing it
+        util.log('Proxying', method.toUpperCase(), 'service at', config.path);
+
+      } else {
+
+        const middlewares = [
+          setConfig(config),
+          requireParameter,
+          config.callback,
+          delay(config.delay),
+          config.render
+        ];
+
+        util.log('Registering', method.toUpperCase(), 'service at', config.path);
+        app[method].apply(app, [config.path].concat(middlewares));
+
+        if(method !== 'options') {
+          app.options(config.path, cors({ origin: true, credentials: true }));
+        }
+      }
+    });
+  });
+
+  if(options.proxy) {
+
+    app.all('*', delay(options.proxyDelay), proxy.middleware);
+
+  } else {
+
+    !util.isTest() &amp;&amp; app.all('*', (req, res) =&gt; {
+      console.error(`404 NOT FOUND: ${req.url}`);
+      res.writeHead(404);
+      res.end();
+    });
+  }
+
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const options = {
+    configDir: path.join(__dirname, 'services'),
+    port: 8765
+};
+
+const configs = dyson.getConfigurations(options),
+    appBefore = dyson.createServer(options),
+    appAfter = dyson.<span class="apidocCodeKeywordSpan">registerServices</span>(appBefore, options, configs);
+
+console.log(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+
+``` javascript
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.bootstrap" id="apidoc.module.dyson.bootstrap">module dyson.bootstrap</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.bootstrap.bootstrap" id="apidoc.element.dyson.bootstrap.bootstrap">
+        function <span class="apidocSignatureSpan">dyson.</span>bootstrap
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options =&gt; {
+  const configs = getConfigurations(options);
+  const app = createServer(options);
+  return registerServices(app, options, configs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## HTTPS
+
+If you want to run dyson over https:// you have to provide a self-signed (or authority-signed) certificate into the `options.https
+` the same way it's required for NodeJS HTTPS to work:
+
+``` javascript
+const fs = require('fs');
+
+dyson.<span class="apidocCodeKeywordSpan">bootstrap</span>({
+    configDir: `${__dirname}/dummy`,
+    port: 3001,
+    https: {
+        key: fs.readFileSync(`${__dirname}'/certs/sample.key`),
+        crt: fs.readFileSync(`${__dirname}/certs/sample.crt`)
+    }
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.createServer" id="apidoc.module.dyson.createServer">module dyson.createServer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.createServer.createServer" id="apidoc.element.dyson.createServer.createServer">
+        function <span class="apidocSignatureSpan">dyson.</span>createServer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options =&gt; {
+  const app = express();
+  let server;
+
+  if(options.https) {
+    server = https.createServer(options.https, app).listen(options.port);
+  } else {
+    server = app.listen(options.port);
+  }
+
+  app.set('dyson_server', server);
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const options = {
+    configDir: path.join(__dirname, 'services'),
+    port: 8765
+};
+
+const configs = dyson.getConfigurations(options),
+    appBefore = dyson.<span class="apidocCodeKeywordSpan">createServer</span>(options),
+    appAfter = dyson.registerServices(appBefore, options, configs);
+
+console.log(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.defaults" id="apidoc.module.dyson.defaults">module dyson.defaults</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.defaults.assign" id="apidoc.element.dyson.defaults.assign">
+        function <span class="apidocSignatureSpan">dyson.defaults.</span>assign
+        <span class="apidocSignatureSpan">(configs, method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(configs, method) =&gt; {
+  configs = _.isArray(configs) ? configs : [configs];
+  return _.compact(configs.map(config =&gt; {
+    if(!config || !config.path) {
+      return;
+    }
+
+    // Assign method specific defaults
+    config = _.defaults(config, defaults[method]);
+
+    // Bind each method to the config itself
+    return _.bindAll(config);
+  }));
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.defaults.assignToAll" id="apidoc.element.dyson.defaults.assignToAll">
+        function <span class="apidocSignatureSpan">dyson.defaults.</span>assignToAll
+        <span class="apidocSignatureSpan">(method =&gt; { configs[method] = assign(rawConfigs[method], method)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rawConfigs =&gt; {
+  const configs = {};
+  methods.forEach(method =&gt; { configs[method] = assign(rawConfigs[method], method);
+  });
+
+  return configs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.delay" id="apidoc.module.dyson.delay">module dyson.delay</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.delay.delay" id="apidoc.element.dyson.delay.delay">
+        function <span class="apidocSignatureSpan">dyson.</span>delay
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delay =&gt; (req, res, next) =&gt; {
+  if(typeof delay === 'number') {
+    _.delay(next, delay);
+  } else if(_.isArray(delay)) {
+    _.delay(next, _.random.apply(null, delay));
+  } else {
+    next();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+const _ = require('lodash');
+
+module.exports = delay =&gt; (req, res, next) =&gt; {
+  if(typeof delay === 'number') {
+    _.<span class="apidocCodeKeywordSpan">delay</span>(next, delay);
+  } else if(_.isArray(delay)) {
+    _.delay(next, _.random.apply(null, delay));
+  } else {
+    next();
+  }
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.getConfigurations" id="apidoc.module.dyson.getConfigurations">module dyson.getConfigurations</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.getConfigurations.getConfigurations" id="apidoc.element.dyson.getConfigurations.getConfigurations">
+        function <span class="apidocSignatureSpan">dyson.</span>getConfigurations
+        <span class="apidocSignatureSpan">(options.configDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options =&gt; {
+  const rawConfigs = loader.load(options.configDir);
+
+  return defaults.assignToAll(rawConfigs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path = require('path');
+
+const options = {
+    configDir: path.join(__dirname, 'services'),
+    port: 8765
+};
+
+const configs = dyson.<span class="apidocCodeKeywordSpan">getConfigurations</span>(options),
+    appBefore = dyson.createServer(options),
+    appAfter = dyson.registerServices(appBefore, options, configs);
+
+console.log(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.loader" id="apidoc.module.dyson.loader">module dyson.loader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.loader.load" id="apidoc.element.dyson.loader.load">
+        function <span class="apidocSignatureSpan">dyson.loader.</span>load
+        <span class="apidocSignatureSpan">(module, path.resolve(configDir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configDir =&gt; {
+  const rawConfigs = requireDir(module, path.resolve(configDir)),
+    configs = {};
+  methods.forEach(method =&gt; {
+    configs[method] = _.flattenDeep(findRecursive(rawConfigs, method));
+  });
+
+  return configs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.multiRequest" id="apidoc.module.dyson.multiRequest">module dyson.multiRequest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.multiRequest.doMultiRequest" id="apidoc.element.dyson.multiRequest.doMultiRequest">
+        function <span class="apidocSignatureSpan">dyson.multiRequest.</span>doMultiRequest
+        <span class="apidocSignatureSpan">(req, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(req, path) =&gt; {
+  const options = req.app.get('dyson_options'),
+    host = req.headers.host.split(':'),
+    hostname = host[0],
+    port = host[1],
+    delimiter = options.multiRequest,
+    promises = [],
+    range = isMultiRequest(path, options);
+
+  range.split(delimiter).forEach((id, index, list) =&gt; {
+    const d = when.defer(),
+      url = path.replace(list, id);
+    let data = '';
+
+    promises.push(d.promise);
+
+    http.get({ hostname, port, path: url }, res =&gt; {
+      res.on('data', chunk =&gt; {
+        data += chunk;
+      });
+      res.on('end', () =&gt; {
+        d.resolve(JSON.parse(data));
+      });
+    }).on('error', error =&gt; {
+<span class="apidocCodeCommentSpan">      /* eslint-disable no-console */
+</span>      console.error(error.message);
+    });
+  });
+
+  return promises;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }).then(data =&gt; {
+      res.body = cache[path] = data;
+      util.log('Resolving response for', req.method, path);
+      next();
+    });
+
+  } else {
+    when.all(multiRequest.<span class="apidocCodeKeywordSpan">doMultiRequest</span>(req, path)).then(data =&gt; {
+      res.body = cache[path] = data;
+      util.log('Resolving response for:', req.method, path, '(multiRequest)');
+      next();
+    });
+  }
+
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.multiRequest.isMultiRequest" id="apidoc.element.dyson.multiRequest.isMultiRequest">
+        function <span class="apidocSignatureSpan">dyson.multiRequest.</span>isMultiRequest
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(path, options) =&gt; {
+  const delimiter = options.multiRequest;
+  if(!delimiter) {
+    return false;
+  }
+  return path.split('/').find(fragment =&gt; fragment.includes(delimiter));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    containerArgs = exposeRequest ? [req] : [req.params, req.query];
+
+  if(_.isFunction(service.status)) {
+    service.status.apply(service, [req, res, next]);
+  }
+
+  if(!(service.cache &amp;&amp; cache[path])) {
+    if(!multiRequest.<span class="apidocCodeKeywordSpan">isMultiRequest</span>(path, options)) {
+const isCollection = _.isFunction(service.collection) ? service.collection.apply(service, templateArgs) : service.collection,
+  template = _.isFunction(service.template) ? service.template.apply(service, templateArgs) : service.template;
+let promise;
+
+if(!isCollection) {
+  promise = setValues(template, templateArgs);
+} else {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.parameter" id="apidoc.module.dyson.parameter">module dyson.parameter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.parameter.parameter" id="apidoc.element.dyson.parameter.parameter">
+        function <span class="apidocSignatureSpan">dyson.</span>parameter
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(req, res, next) =&gt; {
+  const requireParameters = res.locals.config.requireParameters;
+  if(!_.isEmpty(requireParameters)) {
+    const missingParameters = requireParameters.filter(parameter =&gt; {
+      return _.isEmpty(req.body[parameter]) &amp;&amp; _.isEmpty(req.query[parameter]);
+    });
+
+    if(!_.isEmpty(missingParameters)) {
+      res.status(400).send({ error: `Required parameters (${missingParameters.join(', ')}) not found.` });
+    }
+  }
+  next();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.proxy" id="apidoc.module.dyson.proxy">module dyson.proxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.proxy.middleware" id="apidoc.element.dyson.proxy.middleware">
+        function <span class="apidocSignatureSpan">dyson.proxy.</span>middleware
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(req, res) =&gt; {
+  const options = req.app.get('dyson_options'),
+    proxyHost = options.proxyHost,
+    proxyPort = options.proxyPort,
+    proxyURI = `${proxyHost}${proxyPort ? `:${proxyPort}` : ''}${req.url}`;
+  let readStream;
+  util.log('Proxying', req.url, 'to', proxyURI);
+  if(req._body) {
+    readStream = new Stream.Readable();
+    readStream._read = function() {
+      this.push(req.rawBody);
+      this.push(null);
+    };
+  } else {
+    readStream = req;
+  }
+
+  readStream.pipe(request({
+    method: req.method,
+    url: proxyURI,
+    headers: _.omit(req.headers, ['host'])
+  }, error =&gt; {
+    if(error) {
+      console.error(`500 INTERNAL SERVER ERROR: ${proxyURI}`);
+      console.error(error);
+      res.writeHead(500);
+      res.end();
+    }
+  })).pipe(res);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.raw_body" id="apidoc.module.dyson.raw_body">module dyson.raw_body</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.raw_body.raw_body" id="apidoc.element.dyson.raw_body.raw_body">
+        function <span class="apidocSignatureSpan">dyson.</span>raw_body
+        <span class="apidocSignatureSpan">({ property = 'rawBody' } = {})</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">({ property = 'rawBody' } = {}) =&gt; {
+  return (req, res, next) =&gt; {
+    let data = '';
+    req.on('data', chunk =&gt; {
+      data += chunk;
+    });
+    req.on('end', () =&gt; {
+      req[property] = data;
+    });
+    next();
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.registerServices" id="apidoc.module.dyson.registerServices">module dyson.registerServices</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.registerServices.registerServices" id="apidoc.element.dyson.registerServices.registerServices">
+        function <span class="apidocSignatureSpan">dyson.</span>registerServices
+        <span class="apidocSignatureSpan">(app, options, configs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(app, options, configs) =&gt; {
+
+  app.set('dyson_options', options);
+
+  app.use(cors({ origin: true, credentials: true }));
+  app.use(rawBody());
+  app.use(cookieParser());
+  app.use(favicon(`${__dirname}/favicon.ico`));
+
+  const bodyParserOptions = options.bodyParserJsonLimit ? { limit: options.bodyParserJsonLimit } : {};
+  app.use(bodyParser.json(bodyParserOptions));
+
+  const bodyParserUrlOptions = { extended: true };
+  bodyParserUrlOptions.limit = options.bodyParserUrlencodedLimit ? options.bodyParserUrlencodedLimit : null;
+  app.use(bodyParser.urlencoded(bodyParserUrlOptions));
+
+  Object.keys(configs).forEach(method =&gt; {
+
+    configs[method].forEach(config =&gt; {
+
+      if(options.proxy === true &amp;&amp; config.proxy !== false) {
+
+        // Allows each config file to be bypassed without removing it
+        util.log('Proxying', method.toUpperCase(), 'service at', config.path);
+
+      } else {
+
+        const middlewares = [
+          setConfig(config),
+          requireParameter,
+          config.callback,
+          delay(config.delay),
+          config.render
+        ];
+
+        util.log('Registering', method.toUpperCase(), 'service at', config.path);
+        app[method].apply(app, [config.path].concat(middlewares));
+
+        if(method !== 'options') {
+          app.options(config.path, cors({ origin: true, credentials: true }));
+        }
+      }
+    });
+  });
+
+  if(options.proxy) {
+
+    app.all('*', delay(options.proxyDelay), proxy.middleware);
+
+  } else {
+
+    !util.isTest() &amp;&amp; app.all('*', (req, res) =&gt; {
+      console.error(`404 NOT FOUND: ${req.url}`);
+      res.writeHead(404);
+      res.end();
+    });
+  }
+
+  return app;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+const options = {
+    configDir: path.join(__dirname, 'services'),
+    port: 8765
+};
+
+const configs = dyson.getConfigurations(options),
+    appBefore = dyson.createServer(options),
+    appAfter = dyson.<span class="apidocCodeKeywordSpan">registerServices</span>(appBefore, options, configs);
+
+console.log(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+
+``` javascript
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.response" id="apidoc.module.dyson.response">module dyson.response</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.response.generate" id="apidoc.element.dyson.response.generate">
+        function <span class="apidocSignatureSpan">dyson.response.</span>generate
+        <span class="apidocSignatureSpan">(req, res, next)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(req, res, next) =&gt; {
+
+  const service = res.locals.config,
+    options = res.app.get('dyson_options'),
+    path = req.url,
+    exposeRequest = service.exposeRequest || options.exposeRequest &amp;&amp; service.exposeRequest !== false;
+
+  const templateArgs = exposeRequest ? [req] : [req.params, req.query, req.body, req.cookies, req.headers],
+    containerArgs = exposeRequest ? [req] : [req.params, req.query];
+
+  if(_.isFunction(service.status)) {
+    service.status.apply(service, [req, res, next]);
+  }
+
+  if(!(service.cache &amp;&amp; cache[path])) {
+    if(!multiRequest.isMultiRequest(path, options)) {
+      const isCollection = _.isFunction(service.collection) ? service.collection.apply(service, templateArgs) : service.collection
+,
+        template = _.isFunction(service.template) ? service.template.apply(service, templateArgs) : service.template;
+      let promise;
+
+      if(!isCollection) {
+        promise = setValues(template, templateArgs);
+      } else {
+        const size = _.isFunction(service.size) ? service.size.apply(service, templateArgs) : service.size;
+        promise = when.map(_.times(parseInt(size, 10)), () =&gt; setValues(template, templateArgs));
+      }
+
+      promise.then(data =&gt; {
+        return !service.container ? data : setValues(_.result(service, 'container'), containerArgs.concat([data]), service);
+      }).then(data =&gt; {
+        res.body = cache[path] = data;
+        util.log('Resolving response for', req.method, path);
+        next();
+      });
+
+    } else {
+      when.all(multiRequest.doMultiRequest(req, path)).then(data =&gt; {
+        res.body = cache[path] = data;
+        util.log('Resolving response for:', req.method, path, '(multiRequest)');
+        next();
+      });
+    }
+
+  } else {
+    util.log('Resolving response for', req.method, path, '(cached)');
+    res.body = cache[path];
+    next();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.response.render" id="apidoc.element.dyson.response.render">
+        function <span class="apidocSignatureSpan">dyson.response.</span>render
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(req, res) =&gt; {
+  res.send(res.body);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.response.setValues" id="apidoc.element.dyson.response.setValues">
+        function <span class="apidocSignatureSpan">dyson.response.</span>setValues
+        <span class="apidocSignatureSpan">(template = null, params, scope)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(template = null, params, scope) =&gt; {
+  return when.promise(resolve =&gt; {
+    const promises = [],
+      obj = _.isArray(template) ? [] : Object.create(template);
+    _.forEach(template, (value, key) =&gt; {
+      if(template.hasOwnProperty(key)) {
+        obj[key] = _.isFunction(value) ? value.apply(scope || obj, params) : _.isPlainObject(value) ? setValues(value, params, obj
+) : value;
+        if(when.isPromiseLike(obj[key])) {
+          promises.push(obj[key]);
+          obj[key].then(function(key, value) {
+            obj[key] = value;
+          }.bind(obj, key));
+        }
+      }
+    });
+    when.all(promises).then(() =&gt; resolve(obj));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.dyson.util" id="apidoc.module.dyson.util">module dyson.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.util.isTest" id="apidoc.element.dyson.util.isTest">
+        function <span class="apidocSignatureSpan">dyson.util.</span>isTest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&gt; {
+  return process.env.NODE_ENV === 'test';
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.dyson.util.log" id="apidoc.element.dyson.util.log">
+        function <span class="apidocSignatureSpan">dyson.util.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+  if(!isTest()) {
+    console.log.apply(console, arguments);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+port: 8765
+};
+
+const configs = dyson.getConfigurations(options),
+appBefore = dyson.createServer(options),
+appAfter = dyson.registerServices(appBefore, options, configs);
+
+console.<span class="apidocCodeKeywordSpan">log</span>(`Dyson listening at port ${options.port}`);
+```
+
+Dyson configuration can also be installed into any Express server:
+
+``` javascript
+const express = require('express'),
+dyson = require('./lib/dyson'),
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
