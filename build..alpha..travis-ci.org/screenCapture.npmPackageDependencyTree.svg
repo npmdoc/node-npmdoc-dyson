@@ -4,7 +4,7 @@
 <tspan x="10" y="26">17 megabytes installed</tspan>
 <tspan x="10" y="42"></tspan>
 <tspan x="10" y="58">node_modules</tspan>
-<tspan x="10" y="74">└─┬ dyson@1.0.2 </tspan>
+<tspan x="10" y="74">└─┬ dyson@1.2.0 </tspan>
 <tspan x="10" y="90">  ├─┬ body-parser@1.16.0 </tspan>
 <tspan x="10" y="106">  │ ├── bytes@2.4.0 </tspan>
 <tspan x="10" y="122">  │ ├── content-type@1.0.2 </tspan>
