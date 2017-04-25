@@ -1,4 +1,7 @@
-# api documentation for  [dyson (v1.0.2)](https://github.com/webpro/dyson#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-dyson.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-dyson) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-dyson.svg)](https://travis-ci.org/npmdoc/node-npmdoc-dyson)
+# npmdoc-dyson
+
+#### basic api documentation for  [dyson (v1.2.0)](https://github.com/webpro/dyson#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-dyson.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-dyson) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-dyson.svg)](https://travis-ci.org/npmdoc/node-npmdoc-dyson)
+
 #### Node server for dynamic, fake JSON.
 
 [![NPM](https://nodei.co/npm/dyson.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/dyson)
@@ -51,13 +54,13 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "8769cd667017371336b7d12716341441cfc8be8e",
-        "tarball": "https://registry.npmjs.org/dyson/-/dyson-1.0.2.tgz"
+        "shasum": "a3070b2f22fec8c642ad767dcf34f5dcb746f1bb",
+        "tarball": "https://registry.npmjs.org/dyson/-/dyson-1.2.0.tgz"
     },
     "engines": {
         "node": ">=6"
     },
-    "gitHead": "69ec9fa6d9e05c810f7736d0c5ebb006d5356cff",
+    "gitHead": "0ff621f15d791eeb8e58b5d54f96132fb936a5b3",
     "homepage": "https://github.com/webpro/dyson#readme",
     "keywords": [
         "API",
@@ -90,7 +93,7 @@
         "lint": "eslint lib test",
         "test": "make test"
     },
-    "version": "1.0.2"
+    "version": "1.2.0"
 }
 ```
 
